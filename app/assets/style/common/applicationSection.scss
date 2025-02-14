@@ -1,0 +1,67 @@
+.application {
+  background: rgba(0, 156, 183, 0.1);
+  padding: 46px 0;
+  border: 1px solid #009bb7;
+
+  &__title {
+    width: 100%;
+    font-weight: 800;
+    font-size: 45px;
+    line-height: 1.2;
+    color: #1a202c;
+    text-align: center;
+    margin-bottom: 73px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 60px;
+      height: 3px;
+      border-radius: 1px;
+      background: linear-gradient(225deg, #f76680 0%, #009bb7 100%);
+    }
+
+    @include media(1080) {
+      font-size: 40px;
+    }
+
+    @include media(950) {
+      font-size: 35px;
+    }
+
+    @include media(760) {
+      font-size: 30px;
+    }
+
+    @include media(425) {
+      font-size: 25px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 80px;
+
+    @include media(800) {
+      flex-direction: column;
+      gap: 15px;
+      height: max-content;
+    }
+
+    & .button {
+      width: 150px;
+      height: 37.6px;
+
+      @include media(800) {
+        width: 100%;
+      }
+    }
+  }
+}
