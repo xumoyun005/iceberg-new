@@ -40,6 +40,7 @@ const onSubmit = handleSubmit(async (values) => {
     mainStore.errorModalActive = true;
     mainStore.errorModalText = t("modals.error-text");
   } finally {
+    mainStore.loader = false;
     mainStore.applicationModalActive = false;
   }
 });
