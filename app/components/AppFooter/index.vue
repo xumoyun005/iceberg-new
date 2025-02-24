@@ -14,12 +14,6 @@
                             </a>
                         </li>
                         <li>
-                            <a class="footer-top__items-text" href="tel:+998994875187" target="_blank">
-                                <img src="@/assets/images/footer/phone.svg" alt="" />
-                                +998 99 487 51 87
-                            </a>
-                        </li>
-                        <li>
                             <a class="footer-top__items-text" href="mailto:promocentertash@gmail.com" target="_blank">
                                 <img src="@/assets/images/footer/mail.svg" alt="" />
                                 promocentertash@gmail.com
