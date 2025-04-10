@@ -1,8 +1,14 @@
 <script setup>
-import FlayerImage from "@/assets/images/ourWorks/flayer.webp";
+import FlayerImage1 from "@/assets/images/ourWorks/final1.png";
+import FlayerImage2 from "@/assets/images/ourWorks/final2.png";
+import FlayerImage3 from "@/assets/images/ourWorks/final3.png";
 import QuestionImage from "@/assets/images/ourWorks/oprosnik.webp";
-import PromoImage from "@/assets/images/ourWorks/promo.webp";
-import SamokleykaImage from "@/assets/images/ourWorks/samokleyka.webp";
+import PromoImage1 from "@/assets/images/ourWorks/reklama1.png";
+import PromoImage2 from "@/assets/images/ourWorks/reklama2.png";
+import PromoImage3 from "@/assets/images/ourWorks/reklama3.png";
+import SamokleykaImage1 from "@/assets/images/ourWorks/samonak1.png";
+import SamokleykaImage2 from "@/assets/images/ourWorks/samonak2.png";
+import SamokleykaImage3 from "@/assets/images/ourWorks/samonak3.png";
 
 const { t } = useI18n();
 const selectedWorks = ref(1);
@@ -20,19 +26,19 @@ const worksData = computed(() => {
       return [
         {
           id: 1,
-          img: FlayerImage,
+          img: FlayerImage1,
           title: t("our-works.work-1.text-1"),
           position: "right",
         },
         {
           id: 2,
-          img: FlayerImage,
+          img: FlayerImage2,
           title: t("our-works.work-1.text-1"),
           position: "left",
         },
         {
           id: 3,
-          img: FlayerImage,
+          img: FlayerImage3,
           title: t("our-works.work-1.text-1"),
           position: "right",
         },
@@ -41,19 +47,19 @@ const worksData = computed(() => {
       return [
         {
           id: 1,
-          img: SamokleykaImage,
+          img: SamokleykaImage1,
           title: t("our-works.work-2.text-1"),
           position: "right",
         },
         {
           id: 2,
-          img: SamokleykaImage,
+          img: SamokleykaImage2,
           title: t("our-works.work-2.text-1"),
           position: "left",
         },
         {
           id: 3,
-          img: SamokleykaImage,
+          img: SamokleykaImage3,
           title: t("our-works.work-2.text-1"),
           position: "right",
         },
@@ -83,19 +89,19 @@ const worksData = computed(() => {
       return [
         {
           id: 1,
-          img: PromoImage,
+          img: PromoImage1,
           title: t("our-works.work-4.text-1"),
           position: "right",
         },
         {
           id: 2,
-          img: PromoImage,
+          img: PromoImage2,
           title: t("our-works.work-4.text-1"),
           position: "left",
         },
         {
           id: 3,
-          img: PromoImage,
+          img: PromoImage3,
           title: t("our-works.work-4.text-1"),
           position: "right",
         },
