@@ -55,8 +55,8 @@
                     </li>
                 </ul>
                 <div class="footer-bottom__text">
-                    © 2024 <a href="https://t.me/abdulmalik_akhzamov" target="_blank">
-                        AbdulMalik Akhzamov
+                    © 2024 <a href="https://t.me/icebergbtl_b2b" target="_blank">
+                        Ice Berg BTL Agency
                     </a>
                 </div>
                 <a class="footer-bottom__text"
