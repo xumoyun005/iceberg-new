@@ -55,7 +55,7 @@
                     </li>
                 </ul>
                 <div class="footer-bottom__text">
-                    © 2024 <a href="https://t.me/icebergbtl_b2b" target="_blank">
+                    © 2022 <a href="https://t.me/icebergbtl_b2b" target="_blank">
                         Ice Berg BTL Agency
                     </a>
                 </div>
