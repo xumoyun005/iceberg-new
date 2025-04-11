@@ -170,8 +170,6 @@ export default {
   },
   "consultation-modal": {
     "title": "Bepul maslahat",
-    "text":
-      "Siz bizning veb-saytimizda 30 soniya vaqt davomida bo'lganingizni ko'rmoqdamiz. Telefon raqamingizni qoldiring va bizning eng yaxshi menejerimizdan loyihangiz bo'yicha BEPUL maslahat oling!",
     "name": "Ismingiz",
     "name-placeholder": "Sardor",
     "phone": "Telefon raqamingiz",
