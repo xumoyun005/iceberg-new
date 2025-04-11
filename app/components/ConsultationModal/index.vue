@@ -53,7 +53,6 @@ const closeModal = () => {
 <template>
   <div class="consultation">
     <h3 class="consultation__title">{{ $t("consultation-modal.title") }}</h3>
-    <p class="consultation__text">{{ $t("consultation-modal.text") }}</p>
     <button class="consultation__close-btn" @click="closeModal()">
       <img :src="CloseIcon" alt="" />
     </button>
