@@ -8,11 +8,24 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+      title: "Ice Berg BTL — BTL-агентство в Ташкенте: промоакции и флаеры",
+      meta: [
+        { name: "theme-color", content: "#C5F3FF" },
+        { name: "format-detection", content: "telephone=no" },
+      ],
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      ],
       bodyAttrs: {
         id: "body",
       },
     },
+  },
+
+  runtimeConfig: {
+    telegramBotToken: "",
+    telegramChatId: "",
   },
 
   modules: ["@nuxtjs/i18n", "@pinia/nuxt", "nuxt-swiper", "@element-plus/nuxt"],

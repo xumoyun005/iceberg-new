@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    container_name: iceberg-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      NITRO_HOST: 0.0.0.0
+      NITRO_PORT: 3000
+      NUXT_TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      NUXT_TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}

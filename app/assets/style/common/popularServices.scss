@@ -1,91 +1,72 @@
 .popular-services {
-	background: rgba(0, 156, 183, 0.1);
-	padding: 46px 20px;
-	border: 1px solid #009bb7;
+  padding: 48px 0 80px;
 
-	& .container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding: 46px 0;
-	}
+  &__head {
+    margin-bottom: 36px;
+  }
 
-	&__title {
-		width: 100%;
-		font-weight: 800;
-		font-size: 45px;
-		line-height: 1.2;
-		color: #1a202c;
-		text-align: center;
-		margin-bottom: 73px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+  &__hint {
+    margin-top: 10px;
+    color: $muted;
+    font-size: 14px;
+  }
 
-		&::before {
-			content: '';
-			display: inline-block;
-			width: 60px;
-			height: 3px;
-			border-radius: 1px;
-			background: linear-gradient(225deg, #f76680 0%, #009bb7 100%);
-		}
+  &__items {
+    display: grid;
+    gap: 12px;
+  }
 
-		@include media(1080) {
-			font-size: 40px;
-		}
+  &__item {
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 24px;
+    border-radius: 20px;
+    border: 1px solid $line;
+    background: $snow;
 
-		@include media(950) {
-			font-size: 35px;
-		}
+    @include media(640) {
+      grid-template-columns: 56px 1fr;
+      gap: 12px;
+    }
 
-		@include media(760) {
-			font-size: 30px;
-		}
+    &-index {
+      font-family: $displayFont;
+      font-size: 22px;
+      font-weight: 700;
+      color: $ice-deep;
+    }
 
-		@include media(425) {
-			font-size: 25px;
-		}
-	}
+    &-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: $ink;
+      margin-bottom: 10px;
+    }
 
-	&__items {
-		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(4, 230px);
-		grid-auto-rows: auto;
-		gap: 30px;
-		justify-content: center;
+    &-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: $frost;
+      overflow: hidden;
+    }
 
-		@include media(920) {
-			grid-template-columns: repeat(2, 230px);
-		}
-		@include media(480) {
-			grid-template-columns: repeat(1, 230px);
-		}
-	}
+    &-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: $ice;
+    }
 
-	&__item {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 20px;
+    &-value {
+      font-family: $displayFont;
+      font-size: 22px;
+      font-weight: 700;
+      color: $ice-deep;
 
-		& .el-progress__text {
-			& span {
-				font-weight: 600;
-				font-size: 20px;
-				line-height: 1.2;
-				color: #009bb7;
-			}
-		}
-
-		&-title {
-			font-weight: 500;
-			font-size: 18px;
-			line-height: 1.2;
-			color: #1a202c;
-			text-align: center;
-		}
-	}
+      @include media(640) {
+        display: none;
+      }
+    }
+  }
 }

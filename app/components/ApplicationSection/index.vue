@@ -1,10 +1,7 @@
 <script setup>
 import * as yup from "yup";
-import { ref, reactive } from "vue";
 import { useMainStore } from "@/stores/main";
-import { useI18n } from "vue-i18n";
 import { useForm } from "vee-validate";
-import Loader from "../Loader/index.vue";
 
 const { t } = useI18n();
 const mainStore = useMainStore();
@@ -14,7 +11,7 @@ const schema = yup.object({
   phone: yup.string().required(t("errors.phone")),
 });
 
-const { values, handleSubmit, defineField, errors } = useForm({
+const { handleSubmit, defineField, errors } = useForm({
   validationSchema: schema,
 });
 
@@ -29,18 +26,19 @@ const onSubmit = handleSubmit(async (values) => {
       body: {
         name: values.name,
         phone: values.phone,
-        category: mainStore.category,
+        category: mainStore.category || "Заявка",
       },
     });
 
+    mainStore.modalOpen = true;
     mainStore.successModalActive = true;
     mainStore.successModalText = t("lead.success-send");
   } catch (err) {
+    mainStore.modalOpen = true;
     mainStore.errorModalActive = true;
     mainStore.errorModalText = t("modals.error-text");
   } finally {
     mainStore.loader = false;
-    mainStore.applicationModalActive = false;
   }
 });
 </script>
@@ -48,7 +46,10 @@ const onSubmit = handleSubmit(async (values) => {
 <template>
   <section class="application">
     <div class="container">
-      <h3 class="application__title">{{ $t("application.title") }}</h3>
+      <p class="kicker">{{ $t("application.kicker") }}</p>
+      <h2 class="section-title application__title">
+        {{ $t("application.title") }}
+      </h2>
       <form class="application__form" @submit.prevent="onSubmit">
         <div class="input-group">
           <label class="input-group__label">{{ $t("lead.name") }}</label>
@@ -84,5 +85,3 @@ const onSubmit = handleSubmit(async (values) => {
     </div>
   </section>
 </template>
-
-<style scoped></style>

@@ -3,67 +3,50 @@ import LanguageIcon from "@/assets/images/language.svg";
 import NorthEastIcon from "@/assets/images/north-east.svg";
 import MenuIcon from "@/assets/images/menu.svg";
 import CloseIcon from "@/assets/images/close.svg";
-import LogoBlackICon from "@/assets/images/logo-black.svg";
+import LogoBlackIcon from "@/assets/images/logo-black.svg";
+import { useMainStore } from "~/stores/main";
 
-const { locales, setLocale, t } = useI18n();
+const { locales, setLocale } = useI18n();
+const mainStore = useMainStore();
 const userLang = useCookie<string>("user-lang", {
-  maxAge: 365 * 24 * 60 * 60, // 1 год
+  maxAge: 365 * 24 * 60 * 60,
   default: () => "ru",
 });
-const router = useRouter();
 const langsMenu = ref(false);
-const selectedLang = ref(userLang.value);
+const burgerMenu = ref(false);
+
 const switchLanguage = (code: "uz" | "ru") => {
   setLocale(code);
-  selectedLang.value = code;
   userLang.value = code;
 };
-let languageMenu = ref(false);
-let burgerMenu = ref(false);
 
-const scrollIntoViewOption = (tapedLink: any) => {
-  const home = document.querySelector("#nav");
-  const services = document.querySelector("#services");
-  const about = document.querySelector("#about");
-  const contacts = document.querySelector("#footer");
+const scrollIntoViewOption = (tapedLink: string) => {
+  burgerMenu.value = false;
+  const map: Record<string, string> = {
+    home: "#home",
+    services: "#services",
+    about: "#about",
+    contacts: "#footer",
+  };
+  document.querySelector(map[tapedLink])?.scrollIntoView({
+    block: "start",
+    behavior: "smooth",
+  });
+};
 
-  if (tapedLink == "home") {
-    home.scrollIntoView({
-      block: "start",
-      inline: "nearest",
-      behavior: "smooth",
-    });
-  } else if (tapedLink == "services") {
-    services.scrollIntoView({
-      block: "start",
-      inline: "nearest",
-      behavior: "smooth",
-    });
-  } else if (tapedLink == "about") {
-    about.scrollIntoView({
-      block: "start",
-      inline: "nearest",
-      behavior: "smooth",
-    });
-  } else if (tapedLink == "contacts") {
-    contacts.scrollIntoView({
-      block: "start",
-      inline: "nearest",
-      behavior: "smooth",
-    });
-  }
+const openModal = () => {
+  burgerMenu.value = false;
+  mainStore.modalOpen = true;
+  mainStore.applicationModalActive = true;
+  mainStore.category = "Заявка";
 };
 </script>
 
 <template>
   <nav class="nav" id="nav">
-    <div
-      class="container nav-content"
-      @click="languageMenu = false"
-      @mouseleave="languageMenu = false"
-    >
-      <div class="nav-content__logo">
-        <img :src="LogoBlackICon" alt="" />
+    <div class="container nav-content">
+      <div class="nav-content__logo" @click="scrollIntoViewOption('home')">
+        <img :src="LogoBlackIcon" alt="Ice Berg BTL" />
       </div>
       <ul class="nav-content__list" :class="{ active: burgerMenu }">
         <li class="nav-content__item" @click="scrollIntoViewOption('home')">
@@ -78,7 +61,10 @@ const scrollIntoViewOption = (tapedLink: any) => {
         <li class="nav-content__item" @click="scrollIntoViewOption('contacts')">
           {{ $t("navbar.contacts") }}
         </li>
-        <li class="nav-content__item language" @click.stop="langsMenu = true">
+        <li
+          class="nav-content__item language"
+          @click.stop="langsMenu = !langsMenu"
+        >
           <img :src="LanguageIcon" alt="" />
           <div
             class="nav-content__languages"
@@ -88,8 +74,8 @@ const scrollIntoViewOption = (tapedLink: any) => {
             <div
               class="nav-content__languages-item"
               v-for="locale in locales"
-              :key="`key-${locale}`"
-              @click="switchLanguage(locale.code)"
+              :key="locale.code"
+              @click="switchLanguage(locale.code as 'uz' | 'ru')"
             >
               <span>{{ locale.name }}</span>
               <img :src="NorthEastIcon" alt="" />
@@ -100,11 +86,12 @@ const scrollIntoViewOption = (tapedLink: any) => {
           <img :src="CloseIcon" alt="" />
         </button>
       </ul>
+      <button class="btn btn--primary nav-content__cta" @click="openModal">
+        {{ $t("header-content.application-button") }}
+      </button>
       <button class="nav-content__menu-btn" @click="burgerMenu = true">
         <img :src="MenuIcon" alt="" />
       </button>
     </div>
   </nav>
 </template>
-
-<style scoped></style>

@@ -1,34 +1,42 @@
-$mainFont: "Inter";
+$displayFont: "Inter", sans-serif;
+$mainFont: "Inter", sans-serif;
 
-$mainFontColor: #101010;
-$mainFontSize: 18px;
+$mainFontColor: #1c2b2e;
+$mainFontSize: 16px;
 $mainFontWeight: 400;
 
-// Main color
+$ink: #1c2b2e;
+$ink-soft: #f4fbfe;
+$paper: #f4fbfe;
+$snow: #ffffff;
+$ice: #c5f3ff;
+$ice-deep: #009bb7;
+$frost: #dcf5fe;
+$muted: #5f7378;
+$line: rgba(28, 43, 46, 0.1);
+
 $default-color: #ffffff;
-$body-bg-color: #f5f6fa;
-$primary-color: #009bb7;
-$main-text-color: #474747;
-$secondary-text-color: #707b81;
+$body-bg-color: #f4fbfe;
+$primary-color: #c5f3ff;
+$main-text-color: #1c2b2e;
+$secondary-text-color: #5f7378;
 $success-color: #06a561;
 $success-bg-color: #c4f8e2;
-$danger-color: #ff3b30;
+$danger-color: #ff5d57;
 $danger-bg-color: #fedada;
 $warning-color: #ce8228;
 $warning-bg-color: #faf1db;
-$info-color: #007aff;
-$info-bg-color: #d4e3f3;
+$info-color: #c5f3ff;
+$info-bg-color: #dcf5fe;
 $stable-color: #bc7710;
 $stable-bg-color: #fdffb0;
 
-// Neutral Color
-$neutral-primary: #303133;
-$neutral-regular: #606266;
-$neutral-secondary: #909399;
-$neutral-placeholder: #c0c4cc;
+$neutral-primary: #1c2b2e;
+$neutral-regular: #3d5055;
+$neutral-secondary: #5f7378;
+$neutral-placeholder: #8aa0ab;
 
-// Border Color
-$border-base: #dcdfe6;
-$border-light: #e4e7ed;
-$border-lighter: #ebeef5;
-$border-lightex: #f2f6fc;
+$border-base: rgba(28, 43, 46, 0.12);
+$border-light: rgba(28, 43, 46, 0.08);
+$border-lighter: rgba(28, 43, 46, 0.06);
+$border-lightex: rgba(28, 43, 46, 0.04);

@@ -61,40 +61,38 @@ const accessBtnClick = () => {
 
 <style lang="scss">
 .modal-success {
-  width: 310px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #fff;
-  box-shadow: 0px 0px 11.3px 3px #97979740;
-  border-radius: 7px;
+  background: #ffffff;
+  border: 1px solid rgba(28, 43, 46, 0.1);
+  border-radius: 24px;
   padding: 35px;
 
   &__icon {
     margin-bottom: 15px;
 
-    & svg {
+    svg {
       width: 55px;
       height: 55px;
     }
   }
 
   &__title {
-    font-size: 25px;
-    font-weight: 600;
-    line-height: normal;
-    color: #1a202c;
-    margin-bottom: 20px;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1c2b2e;
+    margin-bottom: 16px;
   }
 
   &__text {
     width: 100%;
     text-align: center;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: normal;
-    color: #1a202c;
+    font-size: 15px;
+    color: #5f7378;
     margin-bottom: 20px;
   }
 }

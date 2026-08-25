@@ -1,13 +1,11 @@
 import { defineEventHandler, readBody } from "h3";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 export default defineEventHandler(async (event) => {
   const { name, phone, category } = await readBody(event);
+  const config = useRuntimeConfig();
 
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  const botToken = config.telegramBotToken;
+  const chatId = config.telegramChatId;
   const message = `🆕 Новый лид:
 
 👤 Имя: ${name}

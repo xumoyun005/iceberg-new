@@ -22,7 +22,8 @@ const [name, nameAttrs] = defineField("name");
 const [phone, phoneAttrs] = defineField("phone");
 
 const onSubmit = handleSubmit(async (values) => {
-  mainStore.loader = true;
+    mainStore.category = "Консультация";
+    mainStore.loader = true;
   try {
     await $fetch("/api/sendToTelegram", {
       method: "POST",

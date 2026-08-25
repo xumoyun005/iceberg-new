@@ -1,77 +1,55 @@
 .stats {
-	padding: 46px 0;
+  padding: 0 0 32px;
 
-	&__list {
-		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(4, 250px);
-		grid-auto-rows: 250px;
-		justify-content: center;
-		gap: 40px;
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid $line;
+    border-radius: 28px;
+    overflow: hidden;
+    background: $frost;
 
-		@include media(1140) {
-			grid-template-columns: repeat(2, 250px);
-		}
-		@include media(580) {
-			grid-template-columns: repeat(1, 250px);
-		}
-	}
-	&__item {
-		width: 100%;
-		height: 100%;
-		background: #fff;
-		box-shadow: 0px 4px 40px 0px #0000001a;
-		border-radius: 7px;
-		padding: 15px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 20px;
+    @include media(900) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 
-		&-icon {
-			width: 58px;
-			height: 58px;
-			border-radius: 50%;
-			background: linear-gradient(225deg, #f76680 0%, #009bb7 100%);
-			padding: 2px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+  &__item {
+    padding: 36px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-right: 1px solid rgba(0, 155, 183, 0.16);
 
-			&-bg {
-				width: 100%;
-				height: 100%;
-				border-radius: 50%;
-				background: #fff;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
+    &:last-child {
+      border-right: none;
+    }
 
-			& img {
-				width: 35px;
-				height: 35px;
-				object-fit: contain;
-			}
-		}
+    @include media(900) {
+      border-bottom: 1px solid rgba(0, 155, 183, 0.16);
 
-		&-num {
-			font-weight: 600;
-			font-size: 25px;
-			line-height: 1.2;
-			background: -webkit-linear-gradient(225deg, #f76680 0%, #009bb7 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
+      &:nth-child(2n) {
+        border-right: none;
+      }
 
-		&-title {
-			font-weight: 500;
-			font-size: 18px;
-			line-height: 1.2;
-			background: -webkit-linear-gradient(225deg, #f76680 0%, #009bb7 100%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-		}
-	}
+      &:nth-last-child(-n + 2) {
+        border-bottom: none;
+      }
+    }
+
+    &-num {
+      font-family: $displayFont;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: $ink;
+      line-height: 1;
+    }
+
+    &-title {
+      font-size: 14px;
+      color: $muted;
+      font-weight: 500;
+    }
+  }
 }

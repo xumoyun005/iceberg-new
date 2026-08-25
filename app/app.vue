@@ -2,6 +2,8 @@
 import { useMainStore } from "./stores/main";
 
 const mainStore = useMainStore();
+
+useSiteSeo();
 </script>
 
 <template>

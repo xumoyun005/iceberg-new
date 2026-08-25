@@ -7,28 +7,34 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #app {
   position: relative;
+  overflow-x: hidden;
 }
 
 body {
   font-family: $mainFont;
   font-size: $mainFontSize;
   font-weight: $mainFontWeight;
-  background: $body-bg-color;
+  background: $paper;
   color: $main-text-color;
+  line-height: 1.5;
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: $default-color;
+  background: $snow;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $primary-color;
+  background-color: $ice-deep;
   border-radius: 12px;
 }
 
@@ -36,12 +42,14 @@ input,
 textarea,
 select,
 button {
+  font-family: inherit;
   background: transparent;
   outline: none;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 ul,
@@ -51,6 +59,11 @@ li {
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+}
+
 @mixin media($size) {
   @media (max-width: #{$size}px) {
     @content;
@@ -58,33 +71,74 @@ li {
 }
 
 .container {
-  max-width: 1320px;
+  max-width: 1240px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-@include media(1440) {
-  .container {
-    max-width: 1120px;
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: $ice-deep;
+  margin-bottom: 16px;
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: $ice-deep;
   }
 }
 
-@include media(1220) {
-  .container {
-    max-width: 1020px;
-  }
+.section-title {
+  font-family: $displayFont;
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: $ink;
 }
 
-@include media(1080) {
-  .container {
-    max-width: 920px;
-  }
-}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
 
-@include media(950) {
-  .container {
-    max-width: 100%;
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &--primary {
+    background: $ice;
+    color: $ink;
+  }
+
+  &--ghost {
+    background: $snow;
+    color: $ink;
+    border-color: $line;
+  }
+
+  &--dark {
+    background: $ink;
+    color: $snow;
   }
 }
 
@@ -97,7 +151,8 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(30, 30, 30, 0.3);
+  background: rgba(28, 43, 46, 0.35);
+  backdrop-filter: blur(10px);
   overflow: hidden;
   overflow-y: auto;
   padding: 50px;
@@ -113,62 +168,60 @@ li {
 }
 
 .button {
-  padding: 0 100px;
-  height: 45px;
+  padding: 0 32px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 1px 2px 0px #1018280d;
-  border: 1px solid #d0d5dd;
-  border-radius: 8px;
+  border: 1px solid $line;
+  border-radius: 999px;
   text-align: center;
   text-wrap: nowrap;
   cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  transition: 0.2s ease;
 
   &.close {
-    background: #fff;
-    border: 1px solid #d0d5dd;
-    color: #1a202c;
+    background: $snow;
+    border: 1px solid $line;
+    color: $ink;
   }
 
   &.send {
-    background: $primary-color;
-    color: #fff;
-    border: 1px solid $primary-color;
+    background: $ice;
+    color: $ink;
+    border: 1px solid $ice;
   }
 
   &.danger {
-    background: #fc5c65;
-    color: #fff;
-    border: 1px solid #fc5c65;
+    background: transparent;
+    color: $ink;
+    border: 1px solid $line;
   }
 }
 
 .input-group {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 
   &__label {
-    color: #1a202c;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: normal;
-    margin-bottom: 5px;
+    color: $ink;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 8px;
   }
 
   &__span {
     height: 18px;
     visibility: hidden;
-    color: #fc5c65;
-    font-weight: 400;
-    font-size: 10px;
-    line-height: normal;
-    text-transform: uppercase;
-    margin: 5px;
+    color: $danger-color;
+    font-weight: 500;
+    font-size: 11px;
+    margin: 6px 0 0;
 
     &.active {
       visibility: visible;
@@ -177,13 +230,20 @@ li {
 
   &__input {
     width: 100%;
-    height: 100%;
-    border: 1px solid #d0d5dd;
-    box-shadow: 0px 1px 2px 0px #1018280d;
-    background: #fff;
-    border-radius: 8px;
+    height: 48px;
+    border: 1px solid $line;
+    background: $snow;
+    border-radius: 14px;
     padding: 10px 14px;
-    color: #606266;
+    color: $ink;
+
+    &::placeholder {
+      color: $muted;
+    }
+
+    &:focus {
+      border-color: $ice;
+    }
   }
 }
 

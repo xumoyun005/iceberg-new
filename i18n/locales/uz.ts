@@ -1,7 +1,13 @@
 export default {
   "meta": {
+    "title": "Ice Berg BTL — Toshkentdagi BTL-agentlik: promoaksiya va flayer",
     "description":
-      "Sizning biznesingizni targ'ib qilish uchun keng qamrovli echimlarni taqdim etadigan professional BTL marketing agentligi.",
+      "Ice Berg BTL — Toshkentdagi BTL-marketing agentligi: promoaksiyalar, flayer tarqatish, so‘rovnomalar, samakleyka va tashqi reklama. Ko‘chada ishlaydigan kampaniyalar.",
+    "keywords":
+      "BTL agentlik Toshkent, Ice Berg BTL, BTL marketing O‘zbekiston, promoaksiya, flayer tarqatish, promouterlar, tashqi reklama, so‘rovnoma, samakleyka, reklama aksiyasi",
+    "imageAlt":
+      "Ice Berg BTL — Toshkentdagi BTL-agentlik: promoaksiya, flayer va tashqi reklama",
+    "ogLocale": "uz_UZ",
   },
   "locale": {
     "ru": "Русский",
@@ -14,12 +20,16 @@ export default {
     "contacts": "Kontaktlar",
   },
   "header-content": {
-    "title": "O'zbekistondagi professional reklama agentligi",
+    "kicker": "BTL-agentlik · Toshkent",
+    "title": "Ko‘rinadigan reklama. Ko‘rinmas kuch.",
+    "subtitle":
+      "Promoaksiyalar, flayerlar, so‘rovnomalar va tashqi reklama — ekrandagi banner emas, ko‘chadagi natija.",
     "application-button": "Ariza qoldirish",
     "download-button": "Tijoriy taklifni yuklash",
   },
   "services": {
     "title": "Xizmatlar",
+    "kicker": "Nima qilamiz",
     "service-1": {
       "title": "Flayerlar tarqatish",
       "text-1": "Savdo markazlarida va ko'chalarda flyerlar tarqatish",
@@ -66,7 +76,9 @@ export default {
     },
   },
   "popular-services": {
-    "title": "Eng ko'p foydalaniladigan xizmatlar",
+    "title": "Eng ko‘p so‘raladigan xizmatlar",
+    "kicker": "Amaliyotda",
+    "hint": "Mijozlar so‘rovlari chastotasi bo‘yicha",
     "service-1": {
       "title": "Promo aksiya",
     },
@@ -82,16 +94,19 @@ export default {
   },
   "stats": {
     "title": "Statistika",
+    "kicker": "Raqamlar",
     "stats-1": "Aktiv hamkorlarimiz",
     "stats-2": "Bajarilgan proyektlar",
     "stats-3": "Mijozlar izohi",
     "stats-4": "Umumiy tajriba ( yil )",
   },
   "partners": {
-    "title": "Hamkorlarimiz",
+    "title": "Bizga ishonishadi",
+    "kicker": "Hamkorlar",
   },
   "our-works": {
     "title": "Bizning ishlar",
+    "kicker": "Keys",
     "work-1": {
       "title": "Flayerlar",
       "text-1": "Kompaniya uchun flayerar",
@@ -110,7 +125,8 @@ export default {
     },
   },
   "about": {
-    "title": "Biz Haqimizda",
+    "title": "Biz haqimizda",
+    "kicker": "Agentlik",
     "title-goals": "Bizning Maqsadlarimiz",
     "title-advantages": "Bizning Ustunliklarimiz",
     "view": "Korish",
@@ -160,7 +176,8 @@ export default {
       "Toshkent sh., Uchtepa tumani, Chilonzor massivi, 13-kvartal, 2A",
   },
   "application": {
-    "title": "Malumotlaringizni qoldiring va biz siz bilan bog'lanamiz",
+    "title": "Ma’lumot qoldiring — biz bog‘lanamiz",
+    "kicker": "Kampaniyani boshlash",
     "name": "Ismingiz",
     "name-placeholder": "Sardor",
     "phone": "Telefon raqamingiz",
