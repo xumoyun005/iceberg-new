@@ -95,7 +95,6 @@ function getJsonLd(t: (key: string) => string, locale: string) {
     t("services.service-3.title"),
     t("services.service-4.title"),
     t("services.service-5.title"),
-    t("services.service-6.title"),
   ];
 
   return {
@@ -140,9 +139,8 @@ function getJsonLd(t: (key: string) => string, locale: string) {
           name: locale === "uz" ? "Toshkent" : "Ташкент",
         },
         sameAs: [
-          "https://www.instagram.com/icebergbtl/",
-          "https://www.facebook.com/profile.php?id=61561572720311",
-          "https://t.me/icebergbtl_b2b",
+          "https://www.instagram.com/icebergbtl.uz/",
+          "https://t.me/iceberg_btl",
         ],
         hasOfferCatalog: {
           "@type": "OfferCatalog",

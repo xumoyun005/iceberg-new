@@ -106,8 +106,8 @@ const closeLeadModal = () => {
           <a href="https://t.me/icebergbtl_b2b" target="_blank">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32px"
-              height="32px"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
             >
               <path

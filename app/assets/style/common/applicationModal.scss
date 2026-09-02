@@ -10,8 +10,9 @@
   padding: 36px;
   color: $ink;
 
-  @include media(570) {
-    padding: 20px;
+  @include media(760) {
+    padding: 24px 16px 20px;
+    border-radius: 22px;
   }
 
   &__title {
@@ -22,6 +23,10 @@
     font-weight: 700;
     line-height: 1.2;
     color: $ink;
+
+    @include media(760) {
+      font-size: 22px;
+    }
 
     span {
       color: $ice-deep;
@@ -35,13 +40,20 @@
     flex-direction: column;
     gap: 16px;
 
+    @include media(760) {
+      margin-top: 18px;
+      gap: 12px;
+    }
+
     &-group {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
+      align-items: start;
 
       @include media(760) {
         grid-template-columns: 1fr;
+        gap: 10px;
       }
     }
 
@@ -51,11 +63,22 @@
       gap: 12px;
 
       @include media(760) {
-        flex-direction: column;
+        margin-top: 4px;
+        flex-direction: column-reverse;
+        gap: 10px;
       }
 
       button {
         flex: 1;
+        min-height: 52px;
+        font-size: 15px;
+        padding: 0 20px;
+
+        @include media(760) {
+          width: 100%;
+          min-height: 52px;
+          font-size: 16px;
+        }
       }
     }
   }
@@ -69,6 +92,11 @@
     font-size: 15px;
     color: $muted;
 
+    @include media(760) {
+      margin-top: 16px;
+      font-size: 14px;
+    }
+
     p {
       display: flex;
       align-items: center;
@@ -80,6 +108,16 @@
       align-items: center;
       gap: 6px;
       color: $ink;
+
+      svg {
+        width: 24px;
+        height: 24px;
+
+        @include media(760) {
+          width: 22px;
+          height: 22px;
+        }
+      }
     }
   }
 }

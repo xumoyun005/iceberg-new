@@ -9,6 +9,7 @@ const openModal = () => {
   mainStore.applicationModalActive = true;
   mainStore.category = "Заявка";
 };
+const showCommercialOffer = false;
 const fileUrl = "/КП-Ice-Berg-Btl-Agency.pdf";
 </script>
 
@@ -25,6 +26,7 @@ const fileUrl = "/КП-Ice-Berg-Btl-Agency.pdf";
             {{ $t("header-content.application-button") }}
           </button>
           <a
+            v-if="showCommercialOffer"
             class="btn btn--ghost"
             :href="fileUrl"
             download="КП-Ice-berg-btl-agency.pdf"

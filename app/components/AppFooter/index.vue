@@ -46,16 +46,23 @@
       <div class="container">
         <ul class="footer-bottom__list">
           <li>
-            <a href="https://www.instagram.com/icebergbtl/" target="_blank">
+            <a
+              href="https://www.instagram.com/icebergbtl.uz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
               <img src="@/assets/images/footer/instagram.svg" alt="Instagram" />
             </a>
           </li>
           <li>
             <a
-              href="https://www.facebook.com/profile.php?id=61561572720311"
+              href="https://t.me/iceberg_btl"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
             >
-              <img src="@/assets/images/footer/facebook.svg" alt="Facebook" />
+              <img src="@/assets/images/footer/telegram.svg" alt="Telegram" />
             </a>
           </li>
         </ul>

@@ -7,21 +7,16 @@
   }
 
   &__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
-
-    @include media(1080) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include media(680) {
-      grid-template-columns: 1fr;
-    }
   }
 
   &__card {
     position: relative;
+    flex: 1 1 300px;
+    max-width: calc(33.333% - 11px);
     min-height: 280px;
     padding: 28px;
     border-radius: 24px;
@@ -30,6 +25,15 @@
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+
+    @include media(1080) {
+      max-width: calc(50% - 8px);
+    }
+
+    @include media(680) {
+      max-width: 100%;
+      flex-basis: 100%;
+    }
 
     &:hover {
       transform: translateY(-4px);

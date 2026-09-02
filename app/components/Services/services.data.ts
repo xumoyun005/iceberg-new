@@ -3,7 +3,6 @@ import selfStickIcon from "@/assets/images/services/self-stick-icon.svg";
 import applicationIcon from "@/assets/images/services/application-icon.svg";
 import promotionIcon from "@/assets/images/services/promotion-icon.svg";
 import adIcon from "@/assets/images/services/ad-icon.svg";
-import developmentIcon from "@/assets/images/services/development-icon.svg";
 
 export const services = [
   {
@@ -53,16 +52,6 @@ export const services = [
       "services.service-5.text-1",
       "services.service-5.text-2",
       "services.service-5.text-3",
-    ],
-  },
-  {
-    icon: developmentIcon,
-    title: "services.service-6.title",
-    texts: [
-      "services.service-6.text-1",
-      "services.service-6.text-2",
-      "services.service-6.text-3",
-      "services.service-6.text-4",
     ],
   },
 ];
